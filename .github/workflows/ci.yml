@@ -1,0 +1,20 @@
+name: RPG Continuous Integration
+
+on:
+  push:
+    branches:
+      - desenvolvimento
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  code-quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do projeto
+        uses: actions/checkout@v7
+
+      - name: Verificar codigo Python
+        uses: astral-sh/ruff-action@v4.1.0

@@ -1,5 +1,6 @@
 from player import Player
 
+
 def mostrar_menu():
     print("=" * 40)
     print("=      As profundezas de Moria ")
