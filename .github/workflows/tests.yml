@@ -1,0 +1,24 @@
+name: Tests
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Downloading code
+        uses: actions/checkout@v4
+
+      - name: Configuring python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installing pytest
+        run: pip install pytest
+
+      - name: Executing tests
+        run: pytest
